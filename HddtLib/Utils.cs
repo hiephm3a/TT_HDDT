@@ -12,6 +12,7 @@ namespace HddtLib
     public class Utils
     {
 
+
         public static Interface.IPublishInvoice CreatePublishHandler()
         {
             return new SoftDreams.PublishHandler();
