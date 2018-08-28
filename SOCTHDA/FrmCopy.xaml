@@ -1,0 +1,56 @@
+<smc:Form x:Class="TT_SOCTHDA_HDDT.FrmCopy"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:smc="clr-namespace:Sm.Windows.Controls;assembly=Sm.Windows.Controls"
+          Title="Sao chep chung tu"
+          LanguageID="TT_SOCTHDA_HDDT_0"
+          Height="167"
+          Width="500"
+          Theme="Voucher"
+          Loaded="FrmCopy_Loaded">
+    <smc:Form.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TextBlockStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/GroupBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/DateTextBoxStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </smc:Form.Resources>
+    <smc:ConfirmGridView OnOk="ConfirmGridView_OnOk"
+                         OnCancel="ConfirmGridView_OnCancel"
+                         >
+        <GroupBox Name="groupCopy"
+                  Margin="12,4,12,0"
+                  Style="{StaticResource NonHeaderGroupBoxStyle}">
+            <smc:GridLayout RowCount="2"
+                            ColumnCount="3"
+                            ColumnWidths="90,140,*"
+                            >
+                <TextBlock Name="tblngay_ct_old"
+                           Text="Ngày c.từ cũ"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           Style="{StaticResource ContentTextStyle}" />
+                <smc:DateTextBox DisplayMode="IncludeBoth"
+                                 Grid.Column="1"
+                                 Grid.Row="0"
+                                 IsReadOnly="True"
+                                 IsAlwaysInEditMode="True"
+                                 Name="txtNgay_ct_old" />
+                <TextBlock Name="tblngay_ct_new"
+                           Text="Ngày c.từ mới"
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           Style="{StaticResource ContentTextStyle}" />
+                <smc:DateTextBox DisplayMode="IncludeBoth"
+                                 Grid.Column="1"
+                                 Grid.Row="1"
+                                 AllowEmpty="False"
+                                 IsAlwaysInEditMode="True"
+                                 Name="txtNgay_ct_new"
+                                 TabIndex="10" />
+            </smc:GridLayout>
+        </GroupBox>
+    </smc:ConfirmGridView>
+</smc:Form>

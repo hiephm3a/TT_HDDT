@@ -1,0 +1,104 @@
+<smc:Form x:Class="TT_SOCTHDA_HDDT.FrmView"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          Title="Danh muc hop dong"
+          xmlns:smc="clr-namespace:Sm.Windows.Controls;assembly=Sm.Windows.Controls"
+          xmlns:local="clr-namespace:SmVoucherLib;assembly=SmVoucherLib"
+          xmlns:sm="clr-namespace:SmLib;assembly=SmLib"
+          xmlns:igDP="http://infragistics.com/DataPresenter"
+          Loaded="Window_Loaded"
+          Theme="Standard"
+          Height="680"
+          Width="960"
+          KeyUp="Form_KeyUp"
+          WindowStartupLocation="CenterScreen">
+    <smc:Form.Resources>
+    </smc:Form.Resources>
+    <smc:ConfirmGridView OnOk="ConfirmGridView_OnOk">
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0" />
+            <RowDefinition Height="320*" />
+            <RowDefinition Height="320*" />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <!--<ObjectDataProvider x:Key="myCollectionObjectProvider"
+                                ObjectType="{x:Type local:FrmBrowse.theTable}" />-->
+            
+        </Grid.Resources>
+
+        <smc:BasicGridView Name="GrdBrowse"
+                          Grid.Row="1"
+                          Margin="0,0,0,12"
+                           RecordActivated="GrdBrowse_RecordActivated">
+            <smc:BasicGridView.Resources>
+                
+                <LinearGradientBrush x:Key="HeaderBackGround"
+                                     EndPoint="0,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#FFEFF7F7"
+                                  Offset="0" />
+                    <GradientStop Color="#FF9CF1F5"
+                                  Offset="0.115" />
+                    <GradientStop Color="#FFEFF5F5"
+                                  Offset="0.996" />
+                    <GradientStop Color="#FFD7F6F7"
+                                  Offset="0.385" />
+                </LinearGradientBrush>
+            </smc:BasicGridView.Resources>
+            <igDP:XamDataGrid.FieldSettings>
+                <igDP:FieldSettings AllowEdit="False"
+                                    AllowRecordFiltering="True"
+                                    AllowGroupBy="True"
+                                    SummaryUIType="MultiSelect" 
+                                    AllowSummaries="False"
+                                    />
+
+
+            </igDP:XamDataGrid.FieldSettings >
+
+            <igDP:XamDataGrid.FieldLayoutSettings>
+                <igDP:FieldLayoutSettings HeaderPrefixAreaStyle="{StaticResource StyleHeaderPrefixArea}"
+                                          RecordSelectorStyle="{StaticResource StyleRecordSelector}"
+                                          AutoGenerateFields="False"
+                                          FilterRecordLocation="OnTopFixed" />
+            </igDP:XamDataGrid.FieldLayoutSettings>
+        </smc:BasicGridView>
+        <smc:BasicGridView Name="GrdBrowseCt"
+                          Grid.Row="2"
+                          Margin="0,0,0,0">
+            <smc:BasicGridView.Resources>
+                <LinearGradientBrush x:Key="HeaderBackGround"
+                                     EndPoint="0,1"
+                                     StartPoint="0,0">
+                    <GradientStop Color="#FFEFF7F7"
+                                  Offset="0" />
+                    <GradientStop Color="#FF9CF1F5"
+                                  Offset="0.115" />
+                    <GradientStop Color="#FFEFF5F5"
+                                  Offset="0.996" />
+                    <GradientStop Color="#FFD7F6F7"
+                                  Offset="0.385" />
+                </LinearGradientBrush>
+            </smc:BasicGridView.Resources>
+            <igDP:XamDataGrid.FieldSettings>
+                <igDP:FieldSettings AllowEdit="False"
+                                    AllowRecordFiltering="False"
+                                    AllowGroupBy="True"
+                                    SummaryUIType="MultiSelect"
+                                    AllowSummaries="False"
+                                   />
+
+
+            </igDP:XamDataGrid.FieldSettings >
+
+            <igDP:XamDataGrid.FieldLayoutSettings>
+                <igDP:FieldLayoutSettings HeaderPrefixAreaStyle="{StaticResource StyleHeaderPrefixArea}"
+                                          RecordSelectorStyle="{StaticResource StyleRecordSelector}"
+                                          AutoGenerateFields="False"
+                                          FilterRecordLocation="OnTopFixed" />
+            </igDP:XamDataGrid.FieldLayoutSettings>
+        </smc:BasicGridView>
+    </Grid>
+    </smc:ConfirmGridView>
+</smc:Form>

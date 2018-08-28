@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCF5CDF8-4C83-4730-8541-5CB402804BF5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TT_SOCTHDA_HDDT</RootNamespace>
+    <AssemblyName>TT_SOCTHDA_HDDT</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\PROGRAM_VAT\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\FA11-PROGRAM\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ArapLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InfragisticsWPF3.DataPresenter.v10.2, Version=10.2.20102.2035, Culture=neutral,  processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InfragisticsWPF3.Editors.v10.2, Version=10.2.20102.2035, Culture=neutral,  processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InfragisticsWPF3.v10.2, Version=10.2.20102.2035, Culture=neutral,  processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="InvtLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Sm.Windows.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmDataLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SmDataLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmDefine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SmDefine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmErrorLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SmErrorLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmLanguages, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SmLanguages.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SmLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmReport, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SmReport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmStyle, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SmStyle.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SmVoucherLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SysLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\FA11-PROGRAM\SysLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="FrmCopy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmSocthdaHdm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmSocthda_Pn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmKHInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmPrintSocthda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmSearchSocthda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmSocthda.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmTaoPT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmTotalInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FrmView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FrmSocthda.xaml.cs">
+      <DependentUpon>FrmSocthda.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converter.cs" />
+    <Compile Include="FrmCopy.xaml.cs">
+      <DependentUpon>FrmCopy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.xaml.cs">
+      <DependentUpon>FrmLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSocthdaHdm.xaml.cs">
+      <DependentUpon>FrmSocthdaHdm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSocthda_Pn.xaml.cs">
+      <DependentUpon>FrmSocthda_Pn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKHInfo.xaml.cs">
+      <DependentUpon>FrmKHInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrintSocthda.xaml.cs">
+      <DependentUpon>FrmPrintSocthda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSearchSocthda.xaml.cs">
+      <DependentUpon>FrmSearchSocthda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTaoPT.xaml.cs">
+      <DependentUpon>FrmTaoPT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTotalInfo.xaml.cs">
+      <DependentUpon>FrmTotalInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmView.xaml.cs">
+      <DependentUpon>FrmView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StartUp.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HddtLib\HddtLib.csproj">
+      <Project>{4a887da4-b764-49e6-8bfd-da8e3e3ce261}</Project>
+      <Name>HddtLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

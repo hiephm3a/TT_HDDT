@@ -1,0 +1,136 @@
+﻿<smc:Form x:Class="TT_SOCTHDA_HDDT.FrmTaoPT"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          Height="293"
+          LanguageID="TT_SOCTHDA_HDDT_10InfoCash"
+          Width="600"
+          Loaded="Form_Loaded"
+        xmlns:smc="clr-namespace:Sm.Windows.Controls;assembly=Sm.Windows.Controls"
+    Title="Tao phieu thu">
+    <smc:Form.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TextBlockStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/GroupBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/AutoCompleteTextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/ExRateTextBoxStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </smc:Form.Resources>
+    <Grid>
+        <smc:ConfirmGridView OnOk="ConfirmGridView_OnOk"
+                         Name="GrdOkCancel">
+            <GroupBox Margin="12,4,12,0" Style="{StaticResource NonHeaderGroupBoxStyle}"
+                  Name="Grdgroup">
+                <smc:GridLayout RowCount="7"
+                            ColumnCount="5"
+                            ColumnWidths="120,140,120,*"
+                            Name="GrdInfo">
+                    <TextBlock Name="tblloai_ct"
+                           Text="Loại phiếu"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           Style="{StaticResource ContentTextStyle}" />
+                    <smc:MaskedTextBox Grid.Column="1"
+                                               Grid.Row="0"
+                                               Name="txtKind"
+                                               TabIndex="1"
+                                               InputMask="1,2"
+                                               Format="M"
+                                               LostFocus="txtKind_LostFocus"/>
+                    <TextBlock Name="tbldien_giailoai_ct"
+                           Text="1 - Phiếu thu, 2 - Giấy báo có của ngân hàng"
+                           Grid.Column="2"
+                               Margin="12,0"
+                               Grid.ColumnSpan="2"
+                           Grid.Row="0"
+                           Style="{StaticResource ContentTextStyle}" />
+                    
+                    <TextBlock Name="tblma_gd"
+                           Text="Loại phiếu thu"
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           Style="{StaticResource ContentTextStyle}" />
+                    
+                    <smc:AutoCompleteTextBox Name="txtMa_gd"
+                                             AllowEmty="False"
+                                             AllowWrong="False"                                             
+                                             Grid.Column="1"
+                                             Grid.Row="1"
+                                             TabIndex="10"                                                      
+                                             SelectAllOnFocus="True"
+                                             ParentControl="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=smc:Form}}"
+                                             SysObj="{Binding Path=BindingSysObj,RelativeSource={RelativeSource FindAncestor, AncestorType=smc:Form}}"
+                                             ListID="dmmagd"      
+                                             PreviewLostFocus="txtMa_gd_PreviewLostFocus"/>
+                    
+                    <TextBlock Name="txtTen_gd"
+                               Grid.Row="1"
+                               Grid.Column="2"
+                               Grid.ColumnSpan="3"
+                               Margin="12,0,0,0"
+                               Style="{StaticResource ContentTextStyle}"/>
+                    
+                    <TextBlock Name="tblma_qs_pt"
+                           Text="Quyển sổ"
+                           Grid.Column="0"
+                           Grid.Row="2"
+                           Style="{StaticResource ContentTextStyle}" />
+                    <smc:AutoCompleteTextBox x:Name="txtMa_qs_pt"
+                                             Grid.Column="1"
+                                             Grid.Row="2"
+                                             TabIndex="10"
+                                             ParentControl="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             SysObj="{Binding Path=BindingSysObj,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             AllowEmty="False"
+                                             AllowWrong="False"
+                                             ListID="dmqs"                                             
+                                             PreviewLostFocus="txtMa_qs_pt_PreviewLostFocus" />
+                    <TextBlock Name="tblso_ct_pt"
+                           Text="Số chứng từ"
+                           Grid.Column="0"
+                           Grid.Row="3"
+                           Style="{StaticResource ContentTextStyle}" />
+                    <TextBox Name="txtso_ct_pt"
+                         Grid.Column="1"
+                         Grid.Row="3"
+                         TabIndex="15" />
+                    <TextBlock Name="tblma_nt"
+                           Text="Mã ngoại tệ"
+                           Grid.Column="0"
+                           Grid.Row="4"
+                           Style="{StaticResource ContentTextStyle}" />
+                    <smc:AutoCompleteTextBox Name="txtMa_nt"
+                                                 Grid.Column="1"
+                                             Grid.Row="4"
+                                                 ParentControl="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                                 SysObj="{Binding Path=BindingSysObj,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                                 AllowEmty="False"
+                                                 AllowWrong="False"
+                                                 ListID="dmnt"
+                                             TabIndex="20"/>
+                    <TextBlock Name="tblnguoi_nop"
+                           Text="Người nộp"
+                           Grid.Column="0"
+                           Grid.Row="5"
+                           Style="{StaticResource ContentTextStyle}" />
+                    <TextBox Name="txtnguoi_nop"
+                         Grid.Column="1"
+                         Grid.Row="5"
+                         TabIndex="30" />
+                    <TextBlock Name="tbllydo_nop"
+                           Text="Lý do nộp"
+                           Grid.Column="0"
+                           Grid.Row="6"
+                           Style="{StaticResource ContentTextStyle}" />
+                    <TextBox Name="txtlydo_nop"
+                         Grid.Column="1"
+                             TabIndex="35"
+                             Grid.ColumnSpan="3"
+                         Grid.Row="6"/>
+                </smc:GridLayout>
+            </GroupBox>
+        </smc:ConfirmGridView>
+    </Grid>
+</smc:Form>

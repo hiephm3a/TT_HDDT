@@ -1,0 +1,62 @@
+<smc:Form x:Class="TT_SOCTHDA_HDDT.FrmKHInfo"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:smc="clr-namespace:Sm.Windows.Controls;assembly=Sm.Windows.Controls"
+          Title="Khach hang VAT"
+          Height="192"
+          Width="600"
+          LanguageID="TT_SOCTHDA_HDDT_1"
+          EscToClose="True"
+          Theme="Voucher"
+          Loaded="Form_Loaded">
+    <smc:Form.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TextBlockStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/GroupBoxStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </smc:Form.Resources>
+    <smc:ConfirmGridView OnOk="ConfirmGridView_OnOk"
+                         Name="GrdOkCancel"
+                         OnCancel="ConfirmGridView_OnCancel">
+        <GroupBox Margin="12,4,12,0" Style="{StaticResource NonHeaderGroupBoxStyle}"
+                  Name="Grdgroup">
+            <smc:GridLayout RowCount="3"
+                            ColumnCount="3"
+                            ColumnWidths="120,140,*"
+                            Name="GrdInfo">
+                <TextBlock Name="tblTen_kh"
+                           Text="Tên khách hàng"
+                           Grid.Column="0"
+                           Grid.Row="0"
+                           Style="{StaticResource ContentTextStyle}" />
+                <TextBox Name="txtTen_kh"
+                         Grid.Column="1"
+                         Grid.Row="0"
+                         Grid.ColumnSpan="2"
+                         TabIndex="10" />
+                <TextBlock Name="tblDia_chi"
+                           Text="Địa chỉ"
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           Style="{StaticResource ContentTextStyle}" />
+                <TextBox Name="txtDia_chi"
+                         Grid.Column="1"
+                         Grid.Row="1"
+                         Grid.ColumnSpan="2"
+                         TabIndex="20" />
+                <TextBlock Name="tblMa_so_thue"
+                           Text="Mã số thuế"
+                           Grid.Column="0"
+                           Grid.Row="2"
+                           Style="{StaticResource ContentTextStyle}" />
+                <TextBox Name="txtMa_so_thue"
+                         Grid.Column="1"
+                         Grid.Row="2"
+                         TabIndex="30" />
+            </smc:GridLayout>
+        </GroupBox>
+    </smc:ConfirmGridView>
+</smc:Form>

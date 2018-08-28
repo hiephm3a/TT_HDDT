@@ -1,0 +1,196 @@
+<smReport:FormFilter x:Class="TT_SOCTHDA_HDDT.FrmSearchTT_SOCTHDA_HDDT"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:src="clr-namespace:TT_SOCTHDA_HDDT"
+          xmlns:smc="http://Fast.com.vn/Sm/Windows/Controls"
+          xmlns:igDP="http://infragistics.com/DataPresenter"
+          xmlns:my="clr-namespace:System;assembly=mscorlib"
+          xmlns:smReport="clr-namespace:SmReport;assembly=SmReport"
+          Name="FormSearch"
+          EscToClose="True"
+          LanguageID="TT_SOCTHDA_HDDT_3"
+          Title="Loc chung tu"
+                     Unloaded="FormSearch_Unloaded"
+          Height="700"
+          Width="960"
+          Loaded="FrmSearchTT_SOCTHDA_HDDT_Loaded"
+          Theme="Voucher">
+    <smc:ConfirmGridView Name="grdConfirm"
+                         OnOk="grdConfirm_OnOk">
+        <smc:GridLayout RowCount="2"
+                        RowHeights="205,*"
+                        Margin="12,4,12,0">
+            <GroupBox Header="Điều kiện lọc"
+                      Name="grpLocCT"
+                      Grid.Column="0"
+                      Grid.Row="0"
+                      Margin="0,0,0,4">
+
+                <smc:GridLayout Name="GrdPhLoc"
+                                RowCount="7"
+                                RowHeights="25,25,25,25,25,25,25"
+                                ColumnCount="6"
+                                ColumnWidths="100,140,12,100,140,*">
+                    <!--so chung tu-->
+                    <TextBlock Grid.Column="0"
+                               Grid.Row="0"
+                               Text="C.từ từ số"
+                               Name="tblso_ct1" />
+                    <TextBox Grid.Column="1"
+                             Grid.Row="0"
+                             TabIndex="10"
+                             Name="txtSo_ct1"
+                             CharacterCasing="Upper" />
+                    <!--so chung tu-->
+                    <TextBlock Grid.Column="3"
+                               Grid.Row="0"
+                               Text="Đến số"
+                               Name="tblso_ct2" />
+                    <TextBox Grid.Column="4"
+                             Grid.Row="0"
+                             TabIndex="12"
+                             Name="txtSo_ct2"
+                             CharacterCasing="Upper" />
+                    <!--chung tu tu ngay-->
+                    <TextBlock Grid.Column="0"
+                               Grid.Row="1"
+                               Text="C.từ từ ngày"
+                               Name="tblngay_ct1" />
+                    <smc:DateTextBox DisplayMode="IncludeBoth"
+                                     Grid.Column="1"
+                                     Grid.Row="1"
+                                     AllowEmpty="False"
+                                     IsAlwaysInEditMode="True"
+                                     Name="txtNgay_ct1"
+                                     Value="{smc:BindingEx Path=M_NGAY_CT1,ElementName=FormSearch}"
+                                     TabIndex="20" />
+                    <!--den ngay-->
+                    <TextBlock Grid.Column="3"
+                               Grid.Row="1"
+                               Text="Đến ngày"
+                               Name="tblngay_ct2" />
+                    <smc:DateTextBox DisplayMode="IncludeBoth"
+                                     Grid.Column="4"
+                                     Grid.Row="1"
+                                     AllowEmpty="False"
+                                     IsAlwaysInEditMode="True"
+                                     Value="{smc:BindingEx Path=M_NGAY_CT2,ElementName=FormSearch}"
+                                     Name="txtNgay_ct2"
+                                     TabIndex="30" />
+                    <TextBlock Text="Mã khách"
+                               Name="tblMa_kh"
+                               Grid.Column="0"
+                               Grid.Row="2" />
+                    <smc:AutoCompleteTextBox Name="txtMa_kh"
+                                             Grid.Column="1"
+                                             Grid.Row="2"
+                                             TabIndex="40"
+                                             Text="{smc:BindingEx Path=M_MA_KH,ElementName=FormSearch}"
+                                             ParentControl="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             SysObj="{Binding Path=BindingSysObj,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             AllowEmty="True"
+                                             AllowWrong="False"
+                                             ListID="dmkh"
+                                             LostFocus="txtMa_kh_LostFocus"/>
+                    <TextBlock Name="tblTen_kh"
+                               Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="2" />
+                    <!--Tk nợ (ma_nx)-->
+                    <TextBlock Name="tblMa_nx"
+                               Text="Tk nợ"
+                               Grid.Column="0"
+                               Grid.Row="3" />
+                    <smc:AutoCompleteTextBox Name="txtMa_nx"
+                                             Grid.Column="1"
+                                             Grid.Row="3"
+                                             TabIndex="41"
+                                             Text="{smc:BindingEx Path=M_TK,ElementName=FormSearch}"
+                                             ParentControl="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             SysObj="{Binding Path=BindingSysObj,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             AllowEmty="True"
+                                             AllowWrong="False"
+                                             ListID="dmtk" 
+                                             LostFocus="txtMa_nx_LostFocus"/>
+                    <TextBlock Name="tblTen_tk"
+                               Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="3" />
+                    <!--ma_vt-->
+                    <TextBlock Name="tblMa_vt"
+                               Text="Mã vật tư"
+                               Grid.Column="0"
+                               Grid.Row="4" />
+                    <smc:AutoCompleteTextBox Name="txtMa_vt"
+                                             Grid.Column="1"
+                                             Grid.Row="4"
+                                             TabIndex="42"
+                                             Text="{smc:BindingEx Path=M_MA_VT,ElementName=FormSearch}"
+                                             ParentControl="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             SysObj="{Binding Path=BindingSysObj,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                                             AllowEmty="True"
+                                             AllowWrong="False"
+                                             ListID="dmvt" 
+                                             LostFocus="txtMa_vt_LostFocus"/>
+                    <TextBlock Name="tblTen_vt"
+                               Grid.Column="3"
+                               Grid.ColumnSpan="3"
+                               Grid.Row="4" />
+
+                    <!-- Ma DVCS -->
+                    <TextBlock Text="Mã ĐVCS"
+		                       Name="lblMaDVCS"
+		                       Grid.Column="0"
+		                       Grid.Row="5" />
+                    <smc:AutoCompleteTextBox Name="txtMaDVCS"
+						                     Grid.Column="1"
+						                     Grid.Row="5"
+						                     TabIndex="43"
+                                             Text="{smc:BindingEx Path=M_MA_DVCS,ElementName=FormSearch}"
+						                     ParentControl="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+						                     SysObj="{Binding Path=BindingSysObj,RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+						                     AllowEmty="True"
+						                     AllowWrong="False"
+						                     ListID="dmdvcs"
+						                     LostFocus="txtMaDVCS_LostFocus" />
+                    <TextBlock Name="lblTenDVCS"
+		                       Grid.Column="3"
+		                       Grid.ColumnSpan="4"
+		                       Grid.Row="5" />
+                    <!--loc_nsd-->
+                    <TextBlock Grid.Column="0"
+                               Grid.Row="6"
+                               Text="Lọc theo nsd"
+                               Name="tblloc_nsd" />
+                    <StackPanel Grid.Column="1"
+                                Grid.ColumnSpan="5"
+                                Grid.Row="6"
+                                Orientation="Horizontal">
+                        <smc:MaskedTextBox Name="txtloc_nsd"
+                                           TabIndex="50"
+                                           Format="M"
+                                           InputMask="0,1"
+                                           Width="38"
+                                           LostFocus="txtloc_nsd_LostFocus" />
+                        <TextBlock Name="tblCommentloc_nsd"
+                                   Text="0 - Không lọc theo nsd, 1 - Lọc theo nsd"
+                                   Margin="12,0,0,0" />
+                    </StackPanel>
+
+                </smc:GridLayout>
+
+            </GroupBox>
+
+            <smReport:ControlDetailFilter3 x:Name="GridSearch"
+                                           Grid.Row="1"
+                                           FontWeight="Normal" />
+        </smc:GridLayout>
+        <!--Thong tin chi tiet-->
+        <Canvas Grid.Row="2"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Margin="0,0,78,33">
+            <TextBlock Text="F5 - Tra cứu" Name="tblF5Des" />
+        </Canvas>
+    </smc:ConfirmGridView>
+</smReport:FormFilter>

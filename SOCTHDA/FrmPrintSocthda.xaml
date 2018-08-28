@@ -1,0 +1,114 @@
+<smc:Form x:Class="TT_SOCTHDA_HDDT.FrmPrintTT_SOCTHDA_HDDT"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:smc="http://Fast.com.vn/Sm/Windows/Controls"
+          xmlns:igDP="http://infragistics.com/DataPresenter"
+          xmlns:smReport="clr-namespace:SmReport;assembly=SmReport"
+          xmlns:igEditors="http://infragistics.com/Editors"
+          Title="Danh muc mau bao cao"
+          LanguageID="TT_SOCTHDA_HDDT_2"
+          EscToClose="True"
+          Loaded="Form_Loaded"
+          Height="450"
+          Width="750">
+    <smc:Form.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TextBlockStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/ButtonStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/DataGridViewStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/GroupBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/CheckBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/DateTextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/NumericTextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/MaskedTextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/AutoCompleteTextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/XamComboEditorStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/ExRateTextBoxStyles.xaml" />
+                <smc:CachedResourceDictionary Source="pack://application:,,,/SmStyle;component/TabItemExStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </smc:Form.Resources>
+    <smc:GridLayout RowCount="5"
+                    RowHeights="*,20,2,25,49"
+                    ColumnCount="5"
+                    Margin="12,4,12,0"
+                    ColumnWidths="132,120,120,120,*">
+        <smReport:ControlFilterReport Grid.ColumnSpan="5"
+                                      Name="GridSearch" />
+        <TextBlock Name="lblctu0"
+                   Grid.Row="1"
+                   Text="Số c.từ gốc kèm theo" />
+        <smc:NumericTextBox Name="txtctu0"
+                            Format="#,0"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            TabIndex="2"
+                            Value="{smc:BindingEx so01}"
+                            InvalidValueBehavior="RevertValue"
+                            LostFocus="txtctu0_LostFocus">
+            <smc:NumericTextBox.ValueConstraint>
+                <igEditors:ValueConstraint ValidateAsType="Integer32"
+                                           MinInclusive="0"
+                                           MaxInclusive="99" />
+            </smc:NumericTextBox.ValueConstraint>
+        </smc:NumericTextBox>
+        <TextBlock Name="lbllien"
+                   Grid.Row="3"
+                   Text="Số liên" />
+        <smc:NumericTextBox Name="txtlien"
+                            Format="#,0"
+                            Grid.Column="1"
+                            Grid.Row="3"
+                            TabIndex="3"
+                            Value="{smc:BindingEx so02}"
+                            InvalidValueBehavior="RevertValue"
+                            LostFocus="txtlien_LostFocus">
+            <smc:NumericTextBox.ValueConstraint>
+                <igEditors:ValueConstraint ValidateAsType="Integer16"
+                                           MinInclusive="1"
+                                           MaxInclusive="9" />
+            </smc:NumericTextBox.ValueConstraint>
+        </smc:NumericTextBox>
+        <smc:GridLayout Grid.Row="4"
+                        Grid.ColumnSpan="5"
+                        ColumnCount="5"
+                        ColumnWidths="104,104,104,200,*">
+            <Button Name="btnin"
+                    Content="_In"
+                    Grid.Column="0"
+                    Width="92"
+                    HorizontalAlignment="Left"
+                    TabIndex="4"
+                    Click="btnin_Click" />
+            <Button Name="btnin_lt"
+                    Content="_In liên tục"
+                    Grid.Column="1"
+                    Width="92"
+                    HorizontalAlignment="Left"
+                    TabIndex="5"
+                    Click="btnin_lt_Click" />
+            <Button Name="btnxem"
+                    Content="_Xem"
+                    Grid.Column="2"
+                    Width="92"
+                    HorizontalAlignment="Left"
+                    TabIndex="6"
+                    Click="btnxem_Click" />
+            <Button Name="btnExport"
+                    Grid.Column="3"
+                    Width="188"
+                    HorizontalAlignment="Left"
+                    TabIndex="6"
+                    Click="btnExport_Click" />
+            <Button Name="btnthoat"
+                    Content="_Quay ra"
+                    Grid.Column="4"
+                    Width="92"
+                    HorizontalAlignment="Left"
+                    TabIndex="7"
+                    Click="btnthoat_Click" />
+        </smc:GridLayout>
+    </smc:GridLayout>
+</smc:Form>
